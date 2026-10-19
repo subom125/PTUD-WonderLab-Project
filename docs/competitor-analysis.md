@@ -1,7 +1,5 @@
 # Phân tích ba website tương tự – WONDERLAB
 
-> Nội dung tổng hợp từ tài liệu nhóm; các ảnh chụp trong Word cần được thêm riêng vào thư mục `docs/images/` nếu muốn hiển thị trên GitHub.
-
 ## 3. Phân tích các website tương tự
 
 ### 3.1. MyKingdom – Website bán lẻ đồ chơi

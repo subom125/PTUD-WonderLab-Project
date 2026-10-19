@@ -1,6 +1,5 @@
 # Requirements – WONDERLAB
 
-> **Nguồn:** Đề tài, phân tích ChatGPT, phản biện Gemini và tài liệu vai trò/chức năng của nhóm. Khi có khác biệt, ưu tiên nội dung đã được nhóm thống nhất trong bảng phản biện và bảng chức năng F01–F15; các điểm chưa thống nhất được ghi riêng bên dưới.
 
 ## 1. Mục tiêu dự án
 

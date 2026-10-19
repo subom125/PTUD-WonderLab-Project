@@ -37,7 +37,6 @@
 | Hoài | Business Analyst | Vai trò người dùng và danh sách chức năng |
 | Thùy Trang | Giới thiệu đề tài | Mô tả ý tưởng, khách hàng và vấn đề kinh doanh |
 
-> Cần bổ sung họ tên đầy đủ/GitHub username và xác nhận phân công triển khai các buổi sau.
 
 ## 5. Công nghệ dự kiến
 
@@ -67,4 +66,3 @@ Chi tiết phân công và tiến độ xem [PROJECT_PLAN.md](PROJECT_PLAN.md).
 - [Vai trò người dùng](docs/user-roles.md)
 - [Quy trình nghiệp vụ](docs/business-workflow.md)
 
-> Chương 1 tập trung xác định yêu cầu và cách phối hợp; website hoàn chỉnh chưa phải đầu ra bắt buộc của buổi đầu.

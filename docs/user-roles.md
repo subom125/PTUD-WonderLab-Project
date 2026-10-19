@@ -35,5 +35,4 @@
 - Quyền Admin phải được kiểm tra ở tầng xử lý dữ liệu/API, không chỉ ẩn nút ở giao diện.
 - Chức năng nâng cao không được mặc định là sản phẩm bắt buộc của phiên bản đầu tiên.
 
-> Nguồn: `Xác định vai trò người dùng và chức năng.docx`; bản tổng hợp yêu cầu nằm trong [`REQUIREMENTS.md`](../REQUIREMENTS.md).
 
