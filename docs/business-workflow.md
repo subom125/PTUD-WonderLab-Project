@@ -24,35 +24,59 @@ Bước 7 - Admin xử lý đơn: Admin đăng nhập và được hệ thống 
 
 Bước 8 - Giao hàng, hoàn tất và tra cứu: Khi bàn giao đơn cho đơn vị vận chuyển, Admin cập nhật “Đang giao”; khi xác nhận giao thành công, Admin cập nhật “Hoàn thành”. Hệ thống lưu lịch sử thay đổi trạng thái. Khách chỉ được xem chi tiết các đơn thuộc tài khoản của mình. Các ngoại lệ xuyên suốt gồm không có kết quả tìm kiếm, sản phẩm hết khả dụng, giỏ rỗng, chưa đăng nhập, dữ liệu giao hàng sai, giá/tồn kho thay đổi, lỗi lưu đơn, Admin từ chối xác nhận và truy cập quản trị không đủ quyền.
 
-![Sơ đồ quy trình nghiệp vụ tổng quát To-Be của WONDERLAB](images/workflow/so-do-tong-quat.png)
+### Quy trình con 1: Tìm kiếm, lọc và lựa chọn sản phẩm
 
-## Quy trình 3. Quản lý sản phẩm và ràng buộc toàn vẹn (Admin)
+Điều kiện bắt đầu: Khách truy cập website và có nhu cầu tìm, so sánh hoặc chọn một sản phẩm. Tác nhân chính là khách; hệ thống chịu trách nhiệm truy vấn, áp dụng tiêu chí lọc và trả kết quả.
+Bước 1: Khách nhập từ khóa hoặc chọn danh mục. Có thể để trống từ khóa để duyệt toàn bộ danh mục đang kinh doanh.
+Bước 2: Khách tùy chọn một hoặc nhiều tiêu chí lọc: độ tuổi, khoảng giá, sở thích hoặc loại hoạt động. Hệ thống chỉ áp dụng các tiêu chí đã được định nghĩa và có dữ liệu chuẩn hóa; các tiêu chí đã chọn được kết hợp đồng thời, không tự động nới lỏng điều kiện.
+Bước 3: Hệ thống truy vấn dữ liệu và chỉ trả về sản phẩm đang kinh doanh thỏa điều kiện. Danh sách cần phản ánh giá và trạng thái hiện hành; khách có thể thay đổi cách lọc hoặc quay về danh mục.
+Bước 4: Nếu không có kết quả, hệ thống hiển thị thông báo dễ hiểu và cho phép xóa từng tiêu chí, xóa toàn bộ bộ lọc hoặc đổi từ khóa/danh mục. Nếu có kết quả, hệ thống hiển thị danh sách sản phẩm.
+Bước 5: Khách mở chi tiết để kiểm tra giá, mô tả, độ tuổi, thông tin sử dụng/an toàn và các thông tin liên quan. Khi thêm vào giỏ, hệ thống kiểm tra sản phẩm vẫn đang kinh doanh và số lượng hợp lệ; nếu không hợp lệ thì từ chối thao tác và thông báo.
+Kết quả: Khách nhận được danh sách phù hợp hoặc hướng dẫn điều chỉnh khi không có kết quả; sản phẩm được chọn có thể chuyển sang giỏ hàng. Quy trình này chỉ là tìm kiếm/lọc tiêu chuẩn, không có hệ thống tư vấn hoặc xếp hạng độc lập.
 
-1. Admin đăng nhập vào hệ thống quản trị.
-2. Vào **Quản lý sản phẩm** và tìm sản phẩm cần cập nhật.
-3. Chọn **Ẩn/ngừng kinh doanh**.
-4. Hệ thống xử lý sản phẩm không còn hợp lệ trong các giỏ hàng chưa đặt mua theo nghiệp vụ dự kiến.
-5. Hệ thống **giữ nguyên thông tin tên, giá mua và hình ảnh** trong các đơn hàng đã tạo trước đó.
-6. Thông báo cập nhật thành công; sản phẩm bị ẩn không còn xuất hiện ở trang chủ/danh mục.
 
-## Quy trình 4. Đăng ký tài khoản và đánh giá sản phẩm
+### Quy trình con 2: Đặt hàng và tạo đơn hàng
 
-1. Guest truy cập website, chọn **Đăng ký**.
-2. Nhập họ tên, số điện thoại, email, mật khẩu và gửi yêu cầu.
-3. Hệ thống tạo tài khoản và đăng nhập tự động.
-4. Khách đặt mua sản phẩm; đơn hoàn thành sau khi giao thành công.
-5. Khách đăng nhập, xem lịch sử mua hàng.
-6. Chọn sản phẩm đã mua và viết đánh giá/nhận xét.
-7. Hệ thống lưu và hiển thị đánh giá tại trang chi tiết.
+Điều kiện bắt đầu: Giỏ hàng có ít nhất một sản phẩm và khách chọn “Tiến hành đặt hàng”. Điều kiện kết thúc thành công: đơn hàng cùng chi tiết được lưu ở trạng thái “Chờ xác nhận” và khách nhận mã đơn.
+Bước 1: Hệ thống đọc lại giỏ hàng và hiển thị tên sản phẩm, số lượng, đơn giá tham khảo và tạm tính. Nếu giỏ rỗng hoặc có sản phẩm không còn khả dụng, khách phải cập nhật giỏ trước khi tiếp tục.
+Bước 2: Hệ thống kiểm tra trạng thái đăng nhập. Nếu chưa đăng nhập, khách đăng nhập hoặc đăng ký; nếu thông tin xác thực sai, hệ thống thông báo và không cho gửi yêu cầu đặt hàng. Sau khi xác thực thành công, khách tiếp tục checkout.
+Bước 3: Khách nhập thông tin người nhận, số điện thoại, địa chỉ giao hàng, ghi chú tùy chọn và chọn COD hoặc chuyển khoản ngân hàng bằng QR. Với COD, hệ thống ghi nhận trạng thái thanh toán “Chưa thanh toán” và số tiền phải thu khi giao hàng. Với QR, hệ thống tạo mã QR theo số tiền và mã đơn duy nhất; nội dung chuyển khoản bắt buộc chứa mã đơn để Admin đối soát. Hệ thống hiển thị rõ rằng thanh toán QR trong MVP được xác nhận thủ công bởi Admin, không phải tích hợp API ngân hàng tự động.
+Bước 4: Máy chủ xác thực phiên người dùng và các trường bắt buộc; lấy giá từ dữ liệu hiện hành; kiểm tra trạng thái kinh doanh, số lượng và tồn kho; tự tính lại tổng tiền. Nếu dữ liệu sai, giá đã đổi, sản phẩm bị ẩn hoặc hàng không đủ, máy chủ từ chối tạo đơn và trả thông báo cụ thể để khách sửa giỏ/thông tin. Nếu hợp lệ, hệ thống lưu phương thức thanh toán và trạng thái thanh toán ban đầu: COD là “Chưa thanh toán”; QR là “Chờ xác nhận thanh toán”.
+Bước 5: Nếu hợp lệ, hệ thống tạo bản ghi đơn hàng và toàn bộ chi tiết đơn theo một giao dịch nhất quán, lưu thông tin sản phẩm/đơn giá/số lượng tại thời điểm đặt, gán mã đơn duy nhất và đặt trạng thái “Chờ xác nhận”. Nếu một phần thao tác lưu thất bại, hệ thống phải rollback để tránh đơn thiếu chi tiết.
+Bước 6: Sau khi lưu thành công, hệ thống hiển thị mã đơn và tóm tắt đơn hàng. Với COD, khách nhận thông tin số tiền cần trả khi nhận hàng. Với QR, khách nhận mã QR, ngân hàng/tài khoản nhận, số tiền và nội dung chuyển khoản chứa mã đơn; khách chuyển khoản qua ứng dụng ngân hàng. Admin đối soát giao dịch và chỉ cập nhật “Đã thanh toán” khi nhận đủ tiền. Nếu lưu thất bại, hệ thống thông báo lỗi, không hiển thị thành công và không tạo đơn giả. Giỏ hàng chỉ được xóa hoặc đánh dấu đã chuyển thành đơn sau khi lưu đơn thành công.
+Kết quả: Đơn hàng được tạo ở trạng thái “Chờ xác nhận”; COD có trạng thái thanh toán “Chưa thanh toán”, còn QR có trạng thái “Chờ xác nhận thanh toán”. Với QR, Admin xác minh khoản tiền đã vào tài khoản và khớp số tiền/mã đơn trước khi xác nhận xử lý giao hàng. Tồn kho chưa bị trừ tại bước checkout.
 
-> **Phân loại phạm vi:** Đăng ký tài khoản là chức năng bắt buộc F05; **đánh giá sản phẩm là chức năng nâng cao F14**, không được hiểu là bắt buộc chỉ vì có mô tả quy trình.
 
-## Ghi chú kiểm thử và trường hợp ngoại lệ
+### Quy trình con 3: Quản lý và xử lý đơn hàng (Admin)
+Điều kiện bắt đầu: Có đơn ở trạng thái “Chờ xác nhận”. Tác nhân chính là Admin; hệ thống xác thực quyền, kiểm tra tồn kho, cập nhật trạng thái và lưu lịch sử xử lý.
+Bước 1: Admin đăng nhập khu vực quản trị. Máy chủ xác thực tài khoản và quyền quản trị; người dùng không đủ quyền bị từ chối truy cập dù có gọi trực tiếp API quản trị.
+Bước 2: Admin mở danh sách đơn, tìm/lọc theo mã đơn hoặc trạng thái, sau đó kiểm tra sản phẩm, số lượng, đơn giá, tổng tiền, thông tin người nhận, địa chỉ và phương thức thanh toán. Với đơn QR, Admin đối chiếu giao dịch ngân hàng theo nội dung chuyển khoản chứa mã đơn và số tiền chính xác; chỉ đánh dấu “Đã thanh toán” khi tiền đã nhận đủ.
+Bước 3: Hệ thống kiểm tra trạng thái hiện tại để tránh xử lý trùng, sau đó kiểm tra tồn kho lần cuối. Với COD, nếu đơn hợp lệ và đủ hàng, Admin xác nhận; hệ thống chuyển trạng thái đơn sang “Đã xác nhận”, giữ trạng thái thanh toán “Chưa thanh toán” và trừ tồn kho đúng một lần. Với QR, chỉ khi thanh toán đã được đối soát thành công và đủ hàng, Admin xác nhận; hệ thống chuyển trạng thái đơn sang “Đã xác nhận”, trạng thái thanh toán sang “Đã thanh toán” và trừ tồn kho đúng một lần.
+Bước 4: Khi đơn được bàn giao cho đơn vị vận chuyển, Admin cập nhật “Đang giao”. Khi có xác nhận giao thành công, Admin cập nhật “Hoàn thành”. Mỗi lần chuyển trạng thái cần được kiểm tra điều kiện, lưu thời điểm và người thực hiện để có thể đối soát.
+Bước 5: Nếu đơn QR chưa nhận được tiền hoặc giao dịch sai số tiền/sai nội dung, Admin không xác nhận giao hàng; đơn giữ “Chờ xác nhận” và thanh toán giữ “Chờ xác nhận thanh toán” để khách có thể hoàn tất chuyển khoản. Nếu quá thời hạn thanh toán 24 giờ mà chưa nhận đủ tiền, hệ thống tự hủy đơn và ghi lý do “Quá hạn thanh toán”; không trừ kho. Nếu không đủ hàng hoặc đơn có thông tin bất thường, Admin hủy đơn và ghi lý do. Nếu tiền QR đã nhận nhưng đơn phải hủy, Admin thực hiện hoàn tiền ngoài hệ thống và lưu ghi chú đối soát.
+Bước 6: Hệ thống lưu lịch sử trạng thái và giới hạn quyền xem đơn: khách chỉ xem đơn của tài khoản mình; Admin được xem và xử lý theo quyền. Những thao tác lặp lại không được trừ tồn kho hoặc ghi nhận chuyển trạng thái nhiều lần.
+Luồng trạng thái đơn chuẩn: “Chờ xác nhận” → “Đã xác nhận” → “Đang giao” → “Hoàn thành”. Đơn có thể chuyển sang “Đã hủy” trước khi bàn giao vận chuyển nếu chưa được xác nhận giao hàng; đơn QR chưa thanh toán tự hủy sau 24 giờ. Trạng thái thanh toán được quản lý riêng: COD đi từ “Chưa thanh toán” sang “Đã thanh toán” sau khi giao hàng thu tiền thành công; QR đi từ “Chờ xác nhận thanh toán” sang “Đã thanh toán” sau khi Admin đối soát tiền vào tài khoản. Không trộn trạng thái đơn với trạng thái thanh toán
 
-- Không có sản phẩm Wonder Finder phù hợp → thông báo rõ và cho phép chỉnh tiêu chí.
-- Dữ liệu Checkout thiếu hoặc không hợp lệ → không tạo đơn.
-- Hết hàng hoặc không đủ hàng → thông báo, không cho hoàn tất đơn không hợp lệ.
-- Giao dịch lưu đơn thất bại → không hiển thị đặt hàng thành công.
-- Khách không được xem đơn của người khác; thao tác quản trị phải qua xác thực/phân quyền.
+### Quy trình con 4: Quản lý sản phẩm và danh mục (Admin)
+Điều kiện bắt đầu: Admin đã đăng nhập và có quyền quản lý catalog. Quy trình áp dụng cho việc thêm mới, chỉnh sửa hoặc ẩn/ngừng kinh doanh sản phẩm; quản lý danh mục cũng phải bảo đảm không làm phát sinh sản phẩm thuộc danh mục không hợp lệ.
+Bước 1: Admin chọn danh sách sản phẩm hoặc danh mục, tìm bản ghi cần thao tác và chọn thêm mới, chỉnh sửa hoặc ẩn/ngừng kinh doanh. Hệ thống xác thực quyền trước khi cho phép ghi dữ liệu.
+Bước 2: Với thao tác thêm/sửa, Admin nhập hoặc cập nhật các trường gồm tên, mô tả, giá, hình ảnh, danh mục, độ tuổi, sở thích/hoạt động, thông tin an toàn, số lượng tồn và trạng thái kinh doanh. Hệ thống kiểm tra trường bắt buộc, định dạng, giá không âm, tham chiếu danh mục và các thuộc tính cần cho tìm kiếm/lọc. Dữ liệu sai không được lưu.
+Bước 3: Nếu dữ liệu hợp lệ, hệ thống lưu thay đổi và cập nhật nội dung hiển thị ở trang chủ, danh mục, trang chi tiết và kết quả tìm kiếm. Nếu Admin ẩn/ngừng kinh doanh sản phẩm, sản phẩm không còn xuất hiện trong các danh sách mua hàng và bị loại khỏi giỏ đang lưu; checkout vẫn phải kiểm tra lại để không thể mua sản phẩm đã ẩn.
+Bước 4: Thông tin sản phẩm đã chốt trong đơn hàng lịch sử (tên/đơn giá/số lượng tại thời điểm mua) phải được giữ nguyên khi Admin sửa giá, mô tả hoặc ẩn sản phẩm. Xóa/ẩn catalog không được làm mất chi tiết đơn đã phát sinh. Nếu thao tác cập nhật thất bại, hệ thống thông báo và giữ trạng thái dữ liệu trước đó.
+Kết quả: Catalog và danh mục được cập nhật hợp lệ, nhất quán với bộ lọc và giao diện khách hàng; lịch sử đơn hàng được bảo toàn.
+
+### Quy trình con 5: Đăng ký tài khoản và đánh giá sản phẩm
+Đăng ký/đăng nhập: Khách chọn đăng ký và nhập họ tên, email, số điện thoại (nếu được yêu cầu), mật khẩu. Hệ thống kiểm tra định dạng, trường bắt buộc và tính duy nhất của tài khoản. Mật khẩu được băm trước khi lưu; không lưu mật khẩu dạng rõ. Nếu thông tin sai hoặc tài khoản đã tồn tại, hệ thống báo lỗi để khách nhập lại. Khi đăng nhập, hệ thống xác thực thông tin và tạo phiên đăng nhập phù hợp; quyền truy cập được kiểm tra ở máy chủ.
+Đánh giá sản phẩm: Khách phải đăng nhập, chọn sản phẩm và nhập điểm/nội dung đánh giá theo giới hạn do nhóm quy định. Trước khi lưu, hệ thống kiểm tra tài khoản có đơn ở trạng thái “Hoàn thành” chứa đúng sản phẩm đó hay không. Nếu đủ điều kiện, hệ thống lưu đánh giá gắn với tài khoản và sản phẩm; nếu không đủ điều kiện, hệ thống từ chối và thông báo lý do.
+Kết quả: Tài khoản được tạo/xác thực với dữ liệu hợp lệ; đánh giá chỉ được ghi nhận khi đáp ứng điều kiện mua hàng đã hoàn tất. Quy trình này không thay thế quy trình đặt hàng và không cấp quyền xem đơn của tài khoản khác.
+
+## Quy tắc vận hành được áp dụng trong MVP
+1. Trạng thái đơn hàng: Chờ xác nhận → Đã xác nhận → Đang giao → Hoàn thành; có thể chuyển sang Đã hủy trước khi bàn giao vận chuyển. Đơn QR chưa thanh toán sau 24 giờ sẽ tự hủy.
+2. Tồn kho: kiểm tra tại checkout và kiểm tra lại trước khi xác nhận. Chỉ trừ kho đúng một lần khi Admin xác nhận đơn đủ điều kiện; đơn bị hủy hoặc chưa xác nhận không làm thay đổi tồn kho.
+3. Sản phẩm bị ẩn/ngừng kinh doanh không được mua mới và bị loại khỏi giỏ đang lưu; thông tin sản phẩm đã chốt trong đơn hàng lịch sử được giữ nguyên.
+4. Đặt hàng: khách được duyệt sản phẩm và tạo giỏ khi chưa đăng nhập nhưng phải đăng nhập trước khi đặt hàng. Máy chủ xác thực giá, số lượng, tồn kho, dữ liệu giao hàng và tổng tiền.
+5. Khám phá sản phẩm: bộ lọc theo độ tuổi, danh mục, khoảng giá, sở thích/hoạt động được kết hợp đồng thời; nếu không có kết quả, hệ thống hiển thị thông báo và cho phép xóa bộ lọc hoặc đổi từ khóa.
+6. Thanh toán: hỗ trợ COD và chuyển khoản QR. COD thanh toán khi nhận hàng; QR dùng mã đơn trong nội dung chuyển khoản, Admin xác nhận thủ công sau khi đối soát tiền vào tài khoản. Đơn QR quá hạn 24 giờ chưa thanh toán sẽ tự hủy. Đây là quy trình chuyển khoản QR có xác nhận thủ công, không tuyên bố tích hợp cổng thanh toán hoặc API ngân hàng.
+
 
 > Nguồn: `Xác định quy trình nghiệp vụ chính.docx`; tham chiếu quyết định và phân loại chức năng ở [`REQUIREMENTS.md`](../REQUIREMENTS.md).
