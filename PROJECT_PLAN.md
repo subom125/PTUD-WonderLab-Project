@@ -6,10 +6,11 @@
 | --- | --- | --- | --- |
 | Trung Hiếu | Trưởng nhóm, nghiên cứu đối thủ | Điều phối; phân tích ba website | `docs/competitor-analysis.md` |
 | Quang Khải | Quản lý GitHub | Tạo repo, Issues, quản lý và tổng hợp tài liệu | Repository, README, Project Plan, AGENTS, Issues |
-| Anh Thi | Phân tích yêu cầu bằng AI, Phân tích nghiệp vụ | Lưu prompt ChatGPT, kết quả đề xuất, Quy trình mua hàng, quản trị và tài khoản | Phần ChatGPT của `AI_USAGE_LOG.md`, `docs/business-workflow.md` |
+| Anh Thi | Phân tích yêu cầu bằng AI | Lưu prompt ChatGPT, kết quả đề xuất | Phần ChatGPT của `AI_USAGE_LOG.md` |
 | Hà Giang | Phản biện bằng AI | Lưu prompt Gemini, phản biện, quyết định nhóm | Phần Gemini của `AI_USAGE_LOG.md` |
 | Hoài | Business Analyst | Vai trò người dùng, danh sách chức năng | `docs/user-roles.md`, `REQUIREMENTS.md` |
 | Thùy Trang | Giới thiệu đề tài | Vấn đề kinh doanh và khách hàng mục tiêu | Nội dung `README.md`, `REQUIREMENTS.md` |
+| Thảo Nguyên | Phân tích nghiệp vụ | Quy trình mua hàng, quản trị và tài khoản | `docs/business-workflow.md` |
 
 
 ## 2. Các giai đoạn của đồ án
@@ -30,7 +31,7 @@
 | T03 | Phân tích yêu cầu bằng ChatGPT | Anh Thi | Prompt và phân tích đầu tiên | 13pm 18/10/2026 | Đã có tài liệu Word |
 | T04 | Phản biện bằng Gemini | Hà Giang | Prompt, phản biện, quyết định nhóm | 15pm 18/10/2026 | Đã có tài liệu Word |
 | T05 | Vai trò và chức năng | Hoài | Bảng vai trò và chức năng F01–F15 | 17pm 18/10/2026 | Đã có tài liệu Word |
-| T06 | Quy trình nghiệp vụ | Anh Thi | Bốn quy trình | 11pm 18/10/2026 | Đã có tài liệu Word |
+| T06 | Quy trình nghiệp vụ | Thảo Nguyên | 5 quy trình | 11pm 18/10/2026 | Đã có tài liệu Word |
 | T07 | Khởi tạo và tổng hợp GitHub | Quang Khải | Repo, 7 file bắt buộc, Issues | 11pm 19/10/2026 | Đang hoàn thiện |
 
 
