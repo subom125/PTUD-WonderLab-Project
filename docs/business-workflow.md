@@ -5,7 +5,6 @@ Các quy trình To-Be được mô tả từ lúc khách phát sinh nhu cầu t�
 
 Nguyên tắc áp dụng xuyên suốt: (1) chỉ đưa sản phẩm đang kinh doanh vào danh sách có thể mua; (2) thuộc tính dùng để lọc phải được chuẩn hóa trong dữ liệu sản phẩm; (3) máy chủ xác thực quyền, giá, số lượng, tồn kho và tổng tiền; (4) khách được duyệt sản phẩm và tạo giỏ khi chưa đăng nhập nhưng phải đăng nhập trước khi đặt hàng; (5) chỉ thông báo tạo đơn thành công sau khi đơn và chi tiết đơn được lưu thành công; (6) kiểm tra tồn kho tại checkout và kiểm tra lại trước khi Admin xác nhận, chỉ trừ kho khi xác nhận thành công; (7) thao tác quản trị phải được xác thực và phân quyền ở máy chủ; (8) sản phẩm bị ẩn/ngừng kinh doanh không được mua mới và bị loại khỏi giỏ đang lưu, nhưng dữ liệu sản phẩm trong đơn hàng lịch sử được giữ nguyên; (9) lỗi xử lý phải có thông báo rõ ràng và không làm thay đổi một phần trạng thái đơn hoặc tồn kho; (10) đơn hàng hỗ trợ hai phương thức thanh toán: COD và chuyển khoản ngân hàng bằng QR.
 
-![Sơ đồ quy trình nghiệp vụ tổng quát To-Be của WONDERLAB](images/workflow/Sơ đồ tổng quát.png)
 
 ## Mô tả quy trình nghiệp vụ của hệ thống
 ### Quy trình tổng quát: Từ khám phá sản phẩm đến hoàn tất đơn hàng
@@ -25,7 +24,7 @@ Bước 7 - Admin xử lý đơn: Admin đăng nhập và được hệ thống 
 
 Bước 8 - Giao hàng, hoàn tất và tra cứu: Khi bàn giao đơn cho đơn vị vận chuyển, Admin cập nhật “Đang giao”; khi xác nhận giao thành công, Admin cập nhật “Hoàn thành”. Hệ thống lưu lịch sử thay đổi trạng thái. Khách chỉ được xem chi tiết các đơn thuộc tài khoản của mình. Các ngoại lệ xuyên suốt gồm không có kết quả tìm kiếm, sản phẩm hết khả dụng, giỏ rỗng, chưa đăng nhập, dữ liệu giao hàng sai, giá/tồn kho thay đổi, lỗi lưu đơn, Admin từ chối xác nhận và truy cập quản trị không đủ quyền.
 
-
+![Sơ đồ quy trình nghiệp vụ tổng quát To-Be của WONDERLAB](images/workflow/so-do-tong-quat.png)
 
 ## Quy trình 3. Quản lý sản phẩm và ràng buộc toàn vẹn (Admin)
 
