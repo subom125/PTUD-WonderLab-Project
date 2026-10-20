@@ -9,8 +9,8 @@ Website: https://www.mykingdom.com.vn/
 #### Điểm mạnh
 
 Một trong những điểm nổi bật của MyKingdom là cách website tạo sự chú ý ngay từ lần truy cập đầu tiên. Thay vì chỉ hiển thị mã giảm giá theo cách thông thường, MyKingdom sử dụng vòng quay may mắn để khách hàng có cơ hội nhận voucher. Hình thức này đưa yếu tố gamification vào hoạt động khuyến mãi, khiến trải nghiệm nhận ưu đãi trở nên thú vị và có tính tương tác hơn. Đồng thời, việc khách hàng nhận được voucher cũng có thể tạo thêm động lực để họ tiếp tục khám phá sản phẩm và thực hiện mua hàng.
-
-Hình  Vòng quay may mắn nhận voucher trên MyKingdom
+![Vòng quay may măn](images/vqmm-MyKingdom.png)
+Vòng quay may mắn nhận voucher trên MyKingdom
 
 Nguồn: MyKingdom
 
